@@ -13,8 +13,8 @@
     align-items: center;
     height: 100vh;
   }
-  nav{
-    color: aqua;
+  .navbar-green{
+    background-color: aqua;
   }
 
   

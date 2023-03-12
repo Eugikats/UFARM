@@ -5,13 +5,170 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/bootstrap-5.3/css/bootstrap.css" rel="stylesheet">
-    <link href="/css/bootstrap-5.3/js/bootstrap.bundle.js" >
+    <!-- <link href="/css/bootstrap-5.3/js/bootstrap.bundle.js" > -->
+    
     <title>Register</title>
 </head>
 <body>
+    <header>
         <!-- nav starts here -->
    <div w3-include-html="/includes/navbar.html"></div>
    <!-- nav ends her -->
+    </header>
+    <main>
+<style>
+    form {
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  fieldset {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  legend {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+  }
+  
+  input,
+  select {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 
+  }
+  
+  .display {
+	height: 50px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	font-size: 24px;
+	text-align: right;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+</style>
+
+<form>
+    <fieldset>
+      <legend>Personal Information</legend>
+      <label for="first-name">First Name:</label>
+      <input type="text" id="first-name" name="first-name" required>
+      <small id="fnameErr"></small>
+      <label for="last-name">Last Name:</label>
+      <input type="text" id="last-name" name="last-name" required>
+      <small id="lnameErr"></small>
+      <label for="other-names">Other Names:</label>
+      <input type="text" id="other-names" name="other-names">
+      <label for="Gender">Gender:</label>
+      <select id="Gender" name="Gender" required>
+        <option value="">--Please select--</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    
+    </fieldset>
+  
+    <fieldset>
+      <legend>Ward Information</legend>
+      <!-- <label for="ward-representative">Represented Ward:</label> -->
+      <!-- <input type="text" id="ward-representative" name="ward-representative"> -->
+      <label for="Ward">Ward:</label>
+      <select id="Ward" name="Ward" required>
+        <option value="">--Please select--</option>
+        <option value="Male">North</option>
+        <option value="Female">East</option>
+        <option value="Female">West</option>
+        <option value="Female">South</option>
+      </select>
+    
+      <label for="unique-fo-number">Unique FO Number:</label>
+      <input type="text" id="unique-fo-number" name="unique-fo-number">
+    </fieldset>
+  
+    <fieldset>
+      <legend>Contact Information</legend>
+      <label for="phone-number">Phone Number:</label>
+      <input type="tel" id="phone-number" name="phone-number" pattern="[0-9]{10}" required>
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" required>
+    </fieldset>
+  
+    <fieldset>
+      <legend>Residence Information</legend>
+      <label for="residence-type">Residence Type:</label>
+      <select id="residence-type" name="residence-type" required>
+        <option value="">--Please select--</option>
+        <option value="Permanent">Permanent</option>
+        <option value="Temporary">Temporary</option>
+        </select>
+      <label for="start-date">Year of Residence:</label>
+      <input type="date" id="start-date" name="start-date" required>
+       <p id="result"></p> 
+    </fieldset>
+      
+      
+
+
+     <legend>AO Verification Code</legend>
+      <label for="ao-verification-code">AO Verification Code:</label>
+      <input type="text" id="ao-verification-code" name="ao-verification-code" required>
+    </fieldset>
+  
+    <button class="submit-button" style="background-color: green; margin-bottom: 50px; border-radius: 10px; width: 150px; color: #fff;" type="submit">Submit</button>
+    <!-- <button onclick type="submit">Submit</button> -->
+  </form>
+  <script>
+    let startDate = new Date(document.getElementById("start-date").value);
+let currentDate = new Date();
+let difference = currentDate - startDate;
+let years = (difference / (1000 * 60 * 60 * 24))/365;
+let roundedDays = years.toFixed(0)
+document.getElementById("result").innerHTML = "You have stayed here for " + roundedDays + " years."; //});
+
+const Validate = (event) => {
+    let error = 0
+    let firstName = document.getElementById("first-name")
+
+
+    //validating first name input
+    if(firstName == ""){
+        alert('Please the first name must be at least three')
+    }
+    if(error > 0){
+        error.preventDefault();
+        
+    }
+}
+</script>
+
+    </main>
+    <footer>
+
+    </footer>
 </body>
 <script src="/css/bootstrap-5.3/js/bootstrap.bundle.js"></script>
 <script src="/custom-js/custom.js">includeHTML()</script>
