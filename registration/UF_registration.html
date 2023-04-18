@@ -46,67 +46,78 @@
                   <legend>Personal Information</legend>
                   <div class="form-group">
                     <label for="first-name">First Name:</label>
-                    <input type="text" class="form-control" id="first-name" name="first-name">
+                    <input type="text" class="form-control" id="first-name" name="firstname">
+                    <small id="fnameErr"></small>
                   </div>
                   <div class="form-group">
                     <label for="last-name">Last Name:</label>
-                    <input type="text" class="form-control" id="last-name" name="last-name">
+                    <input type="text" class="form-control" id="last-name" name="lastname">
+                    <small id="lnameErr"></small>
                   </div>
                   <div class="form-group">
-                    <label for="other-names">Other Names:</label>
+                    <label for="othernames">Other Names:</label>
                     <input type="text" class="form-control" id="other-names" name="other-names">
                   </div>
                   <div class="form-group">
                     <label for="gender">Gender:</label>
                     <select id="gender" name="gender">
-                      <option value="nine">--Please select--</option>
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
+                      <option value="">--Please select--</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
                     </select>
+                    <small id="genderErr"></small>
                   </div>
                   <div class="form-group">
                     <label for="dob">Date of Birth:</label>
                     <input type="date" class="form-control" id="dob" name="dob">
+                    <small id="dobErr"></small>
                   </div>
                   <div class="form-group">
                     <label for="ward">Represented Ward:</label>
                     
                     <select id="ward" name="ward">
-                      <option value="nine">--Please select--</option>
-                      <option value="ward1">Ward 1</option>
-                      <option value="ward2">Ward 2</option>
-                      <option value="ward3">Ward 3</option>
-                      <option value="ward4">Ward 4</option>
+                      <option value="">--Please select--</option>
+                      <option value="North">North</option>
+                      <option value="East">East</option>
+                      <option value="West">West</option>
+                      <option value="South">South</option>
                     </select>
+                    <small id="wardErr"></small>
                   </div>
                   <div class="form-group">
                     <label for="activities">Activities Undertaken:</label>
                     <select id="activities" name="activities">
-                      <option value="nine">--Please select--</option>
+                      <option value="">--Please select--</option>
                       <option value="Horticulture">Horticulture</option>
                       <option value="Dairy">Dairy</option>
                       <option value="Poultry">Poultry</option>
                     </select>
+                    <small id="activityError"></small>
                   </div>
                   <div class="form-group">
                     <label for="phone">Phone Number:</label>
-                    <input type="tel" class="form-control" id="phone" name="phone">
+                    <input type="tel" class="form-control" id="phone" name="phonenumber" pattern="[0-9]{10}">
+                    <small id="phoneErr"></small>
                   </div>
                   <div class="form-group">
                     <label for="nin">NIN (Number):</label>
                     <input type="text" class="form-control" id="nin" name="nin">
+                    <small id="ninErr"></small>
                   </div>
                   <div class="form-group">
-                      <label for="unique-id">Unique ID:</label>
-                      <input type="text" class="form-control" id="unique-id" name="unique-id">
+                    <label>Unique Number</label>
+                    <input id="uniquenumber" name="uniquenumber" placeholder="Eg.UF-001">
+                    <small id="uniquenoErr"></small>
+
                       </div>
-                      <label>Password:</label>
-                      <input class="form-control" id="password" type="password" name="password">
-                      <small id="passErr"></small>
+                        <label>Password</label>
+                        <input class="form-control" id="password" type="password" name="password">
+                        <small id="passErr"></small>
                       <button class="btn btn-primary btn-block" id="submit">Register </button>
                     </fieldset>
-                    </div>
                   </form>
+                </div>
+                </div>
                   </div>
                 </div>
               </div>
@@ -124,5 +135,5 @@
   
 <script src="/css/bootstrap-5.3/js/bootstrap.bundle.js"></script>
   <script src="/custom-js/custom.js">includeHTML()</script>
-  <script src="./fo_auth.js"></script>
+  <script src="./uf_auth.js"></script>
 </html>

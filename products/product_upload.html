@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/bootstrap-5.3/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/custom.css/custom.css" rel="stylesheet">
+    <!-- <link href="/css/bootstrap-5.3/js/bootstrap.bundle.js" > -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
+    <title>Title</title>
+</head>
+<body>
+    <header>
+        <!-- nav starts here -->
+   <div w3-include-html="/includes/navbar.html"></div>
+   <!-- nav ends her -->
+    </header>
+    <main>
+    <div class="container col-md-4">
+        <div class="card shadow" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+            <div class="card-body">
+              <h2 class="card-title">Upload Product</h2>
+              <form id="regForm" action="#" name="register" onsubmit="return Validate();" method="POST">
+                <fieldset>
+                  <legend>Product Details</legend>
+                  <div class="form-group">
+                    <label for="product-image">Upload Product Image:</label>
+                    <input type="file" class="form-control-file" id="product-image" name="product-image">
+                  </div>
+                  <div class="form-group">
+                    <label for="product-name">Name of Product:</label>
+                    <input type="text" class="form-control" id="product-name" name="product-name">
+                  </div>
+                  <div class="form-group">
+                    <label for="ward">Represented Ward:</label>
+                    
+                    <select id="ward" name="ward">
+                      <option value="">--Please select--</option>
+                      <option value="North">North</option>
+                      <option value="East">East</option>
+                      <option value="West">West</option>
+                      <option value="South">South</option>
+                    </select>
+                    <small id="wardErr"></small>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="upload-date">Upload Date:</label>
+                    <input type="text" class="form-control" id="upload-date" name="upload-date" value="" placeholder="Current Date" readonly>
+                  </div>
+                  
+                  <script>
+                    let currentDate = new Date().toISOString().slice(0, 10);
+                    document.getElementById("upload-date").value = currentDate;
+                  </script>
+                  
+                  <div class="form-group">
+                    <label for="unitprice">Unit Price:</label>
+                    <input type="number" class="form-control" id="unit-price" name="unitprice">
+                  </div>
+                  <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" class="form-control" id="quantity" name="quantity">
+                  </div>
+                  <div class="form-group">
+                    <label for="mode-of-payment">Mode of Payment:</label>
+                    <select class="form-control" id="mop" name="modeofpayment">
+                      <option value="Cash">Cash</option>
+                      <option value="Mobile Money">Mobile Money</option>
+                      <option value="Both">Both</option>
+                  </div>
+                  <div class="form-group">
+                    <label for="deliverytype">Mode of Delivery:</label>
+                    <select class="form-control" id="mod" name="modeofdelivery">
+                      <option value="Pick Up">Pick Up</option>
+                      <option value="Home delivery">Home delivery</option>
+                      <option value="Both">Both</option>
+                  </div>
+                  <div class="form-group">
+                    <label for="directions-to-farm">Directions to Farm:</label>
+                    <textarea class="form-control" id="directions-to-farm" name="farmdirections"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="produce-type">Produce Type:</label>
+                    <select class="form-control" id="produce-type" name="producetype">
+                      <option value="organic">Organic</option>
+                      <option value="non-organic">Non-Organic</option>
+                    </select>
+                  </div>
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+      </div>
+          
+      <script>
+const Validate = () => {
+
+}
+      </script>
+</main>
+<footer></footer>
+</body>
+<script src="/css/bootstrap-5.3/js/bootstrap.bundle.js"></script>
+<script src="/custom-js/custom.js">includeHTML()</script>
+</html>

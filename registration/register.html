@@ -8,7 +8,7 @@
       <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
       <!-- <link href="/css/bootstrap-5.3/js/bootstrap.bundle.js" > -->
       
-      <title>Register</title>
+      <title>Farmer One Registration</title>
   </head>
   <body>
       <header>
@@ -84,27 +84,29 @@
         <small id="lnameErr"></small>
         <label>Other Names:</label>
         <input type="text" id="onames" name="othernames">
-        <small id="lnameErr"></small>
-        <label for="Gender">Gender:</label>
-        <select id="Gender" name="Gender" >
+        <!-- <small id="lnameErr"></small> -->
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
           <option value="">--Please select--</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
+        </select>
+        <small id="genderErr"></small>
         </select >
       
       </fieldset>
     
       <fieldset>
-        <legend>Ward Information</legend>
-        <!-- <label for="ward-representative">Represented Ward:</label> -->
-        <!-- <input type="text" id="ward-representative" name="ward-representative"> -->
-        <label for="Ward">Ward:</label>
-        <select id="Ward" name="Ward" >
+        <label for="ward">Represented Ward:</label>
+                    
+        <select id="ward" name="ward">
           <option value="">--Please select--</option>
-          <option value="Male">North</option>
-          <option value="Female">East</option>
-          <option value="Female">West</option>
-          <option value="Female">South</option>
+          <option value="North">North</option>
+          <option value="East">East</option>
+          <option value="West">West</option>
+          <option value="South">South</option>
+        </select>
+        <small id="wardErr"></small>
         </select>
       
         <label>Unique Number</label>
@@ -114,23 +116,27 @@
     
       <fieldset>
         <legend>Contact Information</legend>
-        <label for="phone-number">Phone Number:</label>
-        <input type="tel" id="phone-number" name="phone-number" pattern="[0-9]{10}">
-        <label for="location">Location:</label>
-        <input type="text" id="location" name="location">
+        <label for="phone">Phone Number:</label>
+                    <input type="tel" class="form-control" id="phone" name="phonenumber" pattern="[0-9]{10}">
+                    <small id="phoneErr"></small>
+                    <label for="address">Address</label>
+                    <textarea class="form-control" id="address" name="address"></textarea>
+                    <small id="addressErr"></small>
       </fieldset>
     
       <fieldset>
         <legend>Residence Information</legend>
         <label for="residence-type">Residence Type:</label>
-        <select id="residence-type" name="residence-type">
+        <select id="residence-type" name="residencetype">
           <option value="">--Please select--</option>
           <option value="Permanent">Permanent</option>
           <option value="Temporary">Temporary</option>
           </select>
+          <small id="residenceErr"></small>
         <label for="start-date">Year of Residence:</label>
         <input type="date" id="start-date" name="start-date">
         <p id="result"></p> 
+        
       </fieldset>
         
       <fieldset>
